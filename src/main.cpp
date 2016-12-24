@@ -1,7 +1,8 @@
-#include <iostream>
+#include "controller/GallowController.h"
 
 int main( void )
 {
-	std::cout << "Olá mundo!" << std::endl;
-	return 0;
+    GallowController controller;
+
+    return 0;
 }
