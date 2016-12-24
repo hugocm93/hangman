@@ -14,6 +14,8 @@ public:
     
     ~GallowController();
     
+    void newGame();
+    
     int getNumberOfMistakes();
 
     std::vector< char > getWrongLetters();

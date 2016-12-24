@@ -10,6 +10,13 @@ GallowController::~GallowController()
 {
 }
 
+void GallowController::newGame()
+{
+    _gallow = Gallow();
+    _view.init( _gallow.wordSize() );
+    _view.update();
+}
+
 int GallowController::getNumberOfMistakes()
 {
     return _gallow.getWrongLetters().size();

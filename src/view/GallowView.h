@@ -12,6 +12,8 @@ class GallowView
 public:
     GallowView( int wordSize , GallowController* controller );
 
+    void init( int wordSize );
+
     ~GallowView();
 
     void loop();

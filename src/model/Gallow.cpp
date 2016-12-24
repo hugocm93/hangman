@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 
 #include "Gallow.h"
@@ -19,6 +20,21 @@ std::vector< int > Gallow::hasLetter( char letter )
 {
     std::vector< int > indexes;
     int pos = 0;
+
+    if( !isalpha( letter ) && letter != '-' )
+    {
+        return indexes;
+    }
+
+    if( std::find( _typedLetters.begin(), _typedLetters.end(), letter ) == _typedLetters.end() )
+    {
+        _typedLetters.push_back( letter );
+    }    
+    else
+    {
+        return indexes;
+    }
+
 
     while( true )
     {

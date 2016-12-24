@@ -29,9 +29,9 @@ public:
 
 private:
 
-    std::string _word;
     int _numberOfRights;
-
+    std::string _word;
+    std::vector< char > _typedLetters;
     std::vector< char > _wrongLetters;
 };
 
