@@ -8,15 +8,14 @@
 
 class Gallow
 {
-
 public:
 
     Gallow();
-    
+
     ~Gallow() = default;
 
     void pushLetter( char letter );
-    
+
     bool didWin();
 
     bool didLose();

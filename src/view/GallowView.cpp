@@ -1,5 +1,6 @@
 #include <cstdio>
-#include <cstdlib> 
+#include <cstdlib>
+#include <iostream>
 
 #include "GallowView.h"
 #include "../controller/GallowController.h"
@@ -9,6 +10,7 @@ GallowView::GallowView( GallowController* controller ) :
 {
     update();
 }
+
 
 void GallowView::loop()
 {
@@ -25,82 +27,91 @@ void GallowView::loop()
     }
 }
 
+
 void GallowView::update()
 {
-    system( "clear" ); 
+    system( "clear" );
     drawGallow();
     drawFooter();
 }
+
 
 void GallowView::drawGallow()
 {
     switch( _controller->getNumberOfMistakes() )
     {
         case 0:
-           std::cout << "  _________  " << std::endl;   
-           std::cout << " |         | " << std::endl;
-           std::cout << " |           " << std::endl;
-           std::cout << " |           " << std::endl; 
-           std::cout << " |           " << std::endl; 
-           std::cout << " |           " << std::endl;  
-           std::cout << " |           " << std::endl;  
-        break;
+            std::cout << "  _________  " << std::endl;
+            std::cout << " |         | " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            break;
+
         case 1:
-           std::cout << "  _________  " << std::endl;   
-           std::cout << " |         | " << std::endl;
-           std::cout << " |         0 " << std::endl;
-           std::cout << " |           " << std::endl; 
-           std::cout << " |           " << std::endl; 
-           std::cout << " |           " << std::endl;  
-           std::cout << " |           " << std::endl;  
-        break;
+            std::cout << "  _________  " << std::endl;
+            std::cout << " |         | " << std::endl;
+            std::cout << " |         0 " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            break;
+
         case 2:
-           std::cout << "  _________  " << std::endl;   
-           std::cout << " |         | " << std::endl;
-           std::cout << " |         0 " << std::endl;
-           std::cout << " |          \\ " << std::endl; 
-           std::cout << " |             " << std::endl; 
-           std::cout << " |           " << std::endl;  
-           std::cout << " |           " << std::endl;  
-        break;
+            std::cout << "  _________  " << std::endl;
+            std::cout << " |         | " << std::endl;
+            std::cout << " |         0 " << std::endl;
+            std::cout << " |          \\ " << std::endl;
+            std::cout << " |             " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            break;
+
         case 3:
-           std::cout << "  _________  " << std::endl;   
-           std::cout << " |         | " << std::endl;
-           std::cout << " |         0 " << std::endl;
-           std::cout << " |        / \\ " << std::endl; 
-           std::cout << " |             " << std::endl; 
-           std::cout << " |           " << std::endl;  
-           std::cout << " |           " << std::endl;  
-        break;
+            std::cout << "  _________  " << std::endl;
+            std::cout << " |         | " << std::endl;
+            std::cout << " |         0 " << std::endl;
+            std::cout << " |        / \\ " << std::endl;
+            std::cout << " |             " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            break;
+
         case 4:
-           std::cout << "  _________  " << std::endl;   
-           std::cout << " |         | " << std::endl;
-           std::cout << " |         0 " << std::endl;
-           std::cout << " |        /|\\ " << std::endl; 
-           std::cout << " |             " << std::endl; 
-           std::cout << " |           " << std::endl;  
-           std::cout << " |           " << std::endl;  
-        break;
+            std::cout << "  _________  " << std::endl;
+            std::cout << " |         | " << std::endl;
+            std::cout << " |         0 " << std::endl;
+            std::cout << " |        /|\\ " << std::endl;
+            std::cout << " |             " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            break;
+
         case 5:
-           std::cout << "  _________  " << std::endl;   
-           std::cout << " |         | " << std::endl;
-           std::cout << " |         0 " << std::endl;
-           std::cout << " |        /|\\ " << std::endl; 
-           std::cout << " |          \\ " << std::endl; 
-           std::cout << " |           " << std::endl;  
-           std::cout << " |           " << std::endl;  
-        break;
+            std::cout << "  _________  " << std::endl;
+            std::cout << " |         | " << std::endl;
+            std::cout << " |         0 " << std::endl;
+            std::cout << " |        /|\\ " << std::endl;
+            std::cout << " |          \\ " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            break;
+
         default:
-           std::cout << "  _________  " << std::endl;   
-           std::cout << " |         | " << std::endl;
-           std::cout << " |         0 " << std::endl;
-           std::cout << " |        /|\\ " << std::endl; 
-           std::cout << " |        / \\ " << std::endl; 
-           std::cout << " |           " << std::endl;  
-           std::cout << " |           " << std::endl;  
-        break;
+            std::cout << "  _________  " << std::endl;
+            std::cout << " |         | " << std::endl;
+            std::cout << " |         0 " << std::endl;
+            std::cout << " |        /|\\ " << std::endl;
+            std::cout << " |        / \\ " << std::endl;
+            std::cout << " |           " << std::endl;
+            std::cout << " |           " << std::endl;
+            break;
     }
 }
+
 
 void GallowView::drawFooter()
 {
@@ -110,18 +121,19 @@ void GallowView::drawFooter()
         wordCopy.insert( i, " " );
     }
 
-    std::cout << "\n" << wordCopy << std::endl;    
+    std::cout << "\n" << wordCopy << std::endl;
 
     auto wrongLetters = _controller->getWrongLetters();
 
-    printf("\nErros: " );
+    printf( "\nErros: " );
     for( int i = 0; i < wrongLetters.size(); i++ )
     {
-        printf("%c, ", wrongLetters[ i ] );        
+        printf( "%c, ", wrongLetters[ i ] );
     }
 
     printf( "\n" );
 }
+
 
 void GallowView::gameover( bool won )
 {
@@ -137,7 +149,7 @@ void GallowView::gameover( bool won )
         std::cout << "Perdeu!" << std::endl;
     }
     std::cout << "Aperte 'c' para continuar, ou 's' para sair" << std::endl;
-    
+
     char letter;
     std::cin >> letter;
     if( letter == 'c' || letter == 'C' )
@@ -145,8 +157,10 @@ void GallowView::gameover( bool won )
         _controller->newGame();
     }
     else if( letter == 's' || letter == 'S' )
-    {   
+    {
         system( "clear" );
         exit( 2 );
     }
 }
+
+

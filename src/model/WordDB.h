@@ -6,21 +6,19 @@
 
 class WordDB
 {
-
 public:
 
-virtual ~WordDB() = default;
+    virtual ~WordDB() = default;
 
-static std::string getRandomWord();
+    static std::string getRandomWord();
 
 private:
 
-WordDB();
+    WordDB();
 
-static WordDB _instance;
+    static WordDB _instance;
 
-static std::vector< std::string > _listOfWords;
-
+    static std::vector< std::string > _listOfWords;
 };
 
 #endif

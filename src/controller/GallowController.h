@@ -8,14 +8,13 @@
 
 class GallowController
 {
-
 public:
     GallowController();
-    
+
     ~GallowController() = default;
-    
+
     void newGame();
-    
+
     int getNumberOfMistakes();
 
     std::vector< char > getWrongLetters();
@@ -28,7 +27,7 @@ public:
 
 private:
     Gallow _gallow;
-    
+
     GallowView _view;
 };
 

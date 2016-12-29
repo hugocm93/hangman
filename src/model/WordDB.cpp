@@ -27,10 +27,13 @@ WordDB::WordDB()
     file.close();
 }
 
+
 std::string WordDB::getRandomWord()
 {
-    std::srand(std::time( 0 ) );
-    int randomIndex = std::rand()%_listOfWords.size();
+    std::srand( std::time( 0 ) );
+    int randomIndex = std::rand() % _listOfWords.size();
 
-    return _listOfWords[ randomIndex ] ;
+    return _listOfWords[ randomIndex ];
 }
+
+

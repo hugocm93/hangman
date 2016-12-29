@@ -14,9 +14,10 @@ Gallow::Gallow() :
     }
 }
 
+
 void Gallow::pushLetter( char letter )
 {
-    if( !isalpha( letter ) && letter != '-' || 
+    if( !isalpha( letter ) && letter != '-' ||
         std::find( _typedLetters.begin(), _typedLetters.end(), letter ) != _typedLetters.end() )
     {
         return;
@@ -45,6 +46,7 @@ void Gallow::pushLetter( char letter )
     }
 }
 
+
 bool Gallow::didWin()
 {
     if( _numberOfRights == _word.size() )
@@ -55,32 +57,39 @@ bool Gallow::didWin()
     return false;
 }
 
+
 bool Gallow::didLose()
 {
     if( _wrongLetters.size() >= ATTEMPTS )
     {
         return true;
     }
-    
+
     return false;
 }
+
 
 std::vector< char > Gallow::getWrongLetters()
 {
     return _wrongLetters;
 }
 
+
 std::string Gallow::getWord()
 {
     return _word;
 }
+
 
 std::string Gallow::getStringBuffer()
 {
     return _buffer;
 }
 
+
 int Gallow::wordSize()
 {
     return _word.size();
 }
+
+

@@ -6,21 +6,25 @@ GallowController::GallowController() :
     _view.loop();
 }
 
+
 void GallowController::newGame()
 {
     _gallow = Gallow();
     _view.update();
 }
 
+
 int GallowController::getNumberOfMistakes()
 {
     return _gallow.getWrongLetters().size();
 }
 
+
 std::vector< char > GallowController::getWrongLetters()
 {
     return _gallow.getWrongLetters();
 }
+
 
 void GallowController::incomingLetter( char letter )
 {
@@ -38,12 +42,16 @@ void GallowController::incomingLetter( char letter )
     }
 }
 
+
 std::string GallowController::getWord()
 {
     return _gallow.getWord();
 }
 
+
 std::string GallowController::getStringBuffer()
 {
     return _gallow.getStringBuffer();
 }
+
+
