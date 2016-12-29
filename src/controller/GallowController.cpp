@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "GallowController.h"
 
 GallowController::GallowController() :
@@ -26,7 +24,6 @@ std::vector< char > GallowController::getWrongLetters()
 
 void GallowController::incomingLetter( char letter )
 {
-    std::cout << "in" << std::endl;
     _gallow.pushLetter( letter );
     _view.update();
 

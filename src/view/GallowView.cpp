@@ -1,4 +1,3 @@
-#include <iostream>
 #include <cstdio>
 #include <cstdlib> 
 
@@ -17,7 +16,6 @@ void GallowView::loop()
 
     while( std::cin >> letter )
     {
-        std::cout << "oi" << std::endl;
         if( !isupper( letter ) )
         {
             letter = toupper( letter );
