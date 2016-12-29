@@ -1,57 +1,46 @@
 #include <algorithm>
-#include <iostream>
 
 #include "Gallow.h"
 
 #define ATTEMPTS 6
 
-Gallow::Gallow()
+Gallow::Gallow() :
+    _numberOfRights( 0 ),
+    _word( WordDB::getRandomWord() )
 {
-    wordDB db;
-    _word = db.getRandomWord();
-    _numberOfRights = 0;
+    for( int i = 0; i < _word.size(); i++ )
+    {
+        _buffer.insert( i, "_" );
+    }
 }
 
-Gallow::~Gallow()
+void Gallow::pushLetter( char letter )
 {
-}
+    if( !isalpha( letter ) && letter != '-' || 
+        std::find( _typedLetters.begin(), _typedLetters.end(), letter ) != _typedLetters.end() )
+    {
+        return;
+    }
 
-std::vector< int > Gallow::hasLetter( char letter )
-{
-    std::vector< int > indexes;
+    _typedLetters.push_back( letter );
+
     int pos = 0;
-
-    if( !isalpha( letter ) && letter != '-' )
-    {
-        return indexes;
-    }
-
-    if( std::find( _typedLetters.begin(), _typedLetters.end(), letter ) == _typedLetters.end() )
-    {
-        _typedLetters.push_back( letter );
-    }    
-    else
-    {
-        return indexes;
-    }
-
-
     while( true )
     {
         int firstOc = _word.find( letter, pos );
 
         if( firstOc == std::string::npos )
         {
-            if( indexes.empty() )
+            if( pos == 0 )
             {
                 _wrongLetters.push_back( letter );
             }
 
-            return indexes;
+            return;
         }
 
         pos = firstOc + 1;
-        indexes.push_back( firstOc );
+        _buffer.replace( firstOc, 1, 1, letter );
         _numberOfRights++;
     }
 }
@@ -68,7 +57,7 @@ bool Gallow::didWin()
 
 bool Gallow::didLose()
 {
-    if( _wrongLetters.size() == ATTEMPTS )
+    if( _wrongLetters.size() >= ATTEMPTS )
     {
         return true;
     }
@@ -84,6 +73,11 @@ std::vector< char > Gallow::getWrongLetters()
 std::string Gallow::getWord()
 {
     return _word;
+}
+
+std::string Gallow::getStringBuffer()
+{
+    return _buffer;
 }
 
 int Gallow::wordSize()

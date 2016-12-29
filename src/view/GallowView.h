@@ -1,7 +1,6 @@
 #ifndef GALLOW_VIEW_H
 #define GALLOW_VIEW_H
 
-#include <vector>
 #include <string>
 
 class GallowController;
@@ -10,25 +9,25 @@ class GallowView
 {
 
 public:
-    GallowView( int wordSize , GallowController* controller );
 
-    void init( int wordSize );
+    GallowView() = delete;
+    
+    GallowView( GallowController* controller );
 
-    ~GallowView();
+    virtual ~GallowView() = default;
 
     void loop();
 
-    void update( char letter = '_', std::vector< int > indexes = std::vector< int >() );
+    void update();
     
     void gameover( bool won = false );
 
 private:
+
     void drawGallow();
 
-    void drawFooter( char newLetter, std::vector< int > indexes );
+    void drawFooter();
 
-    int _wordSize;
-    std::string _word;
     GallowController* _controller;
 
 };

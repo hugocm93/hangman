@@ -1,19 +1,16 @@
+#include <iostream>
+
 #include "GallowController.h"
 
 GallowController::GallowController() :
-    _view( _gallow.wordSize() , this )
+    _view( this )
 {
     _view.loop();
-}
-
-GallowController::~GallowController()
-{
 }
 
 void GallowController::newGame()
 {
     _gallow = Gallow();
-    _view.init( _gallow.wordSize() );
     _view.update();
 }
 
@@ -29,7 +26,9 @@ std::vector< char > GallowController::getWrongLetters()
 
 void GallowController::incomingLetter( char letter )
 {
-    _view.update( letter,  _gallow.hasLetter( letter ) );
+    std::cout << "in" << std::endl;
+    _gallow.pushLetter( letter );
+    _view.update();
 
     if( _gallow.didWin() )
     {
@@ -45,4 +44,9 @@ void GallowController::incomingLetter( char letter )
 std::string GallowController::getWord()
 {
     return _gallow.getWord();
+}
+
+std::string GallowController::getStringBuffer()
+{
+    return _gallow.getStringBuffer();
 }

@@ -3,12 +3,15 @@
 #include <cstdlib>
 #include <ctime>
 
-#include "wordDB.h"
+#include "WordDB.h"
 
-wordDB::wordDB()
+std::vector< std::string > WordDB::_listOfWords = std::vector< std::string >();
+WordDB WordDB::_instance = WordDB();
+
+WordDB::WordDB()
 {
     std::ifstream file;
-    file.open( "../resources/words.txt", std::ios::in );
+    file.open( "resources/words.txt", std::ios::in );
     if( !file.is_open() )
     {
         std::cout << "Erro ao abrir o arquivo!" << std::endl;
@@ -24,13 +27,9 @@ wordDB::wordDB()
     file.close();
 }
 
-wordDB::~wordDB()
+std::string WordDB::getRandomWord()
 {
-}
-
-std::string wordDB::getRandomWord()
-{
-    std::srand(std::time(0));
+    std::srand(std::time( 0 ) );
     int randomIndex = std::rand()%_listOfWords.size();
 
     return _listOfWords[ randomIndex ] ;

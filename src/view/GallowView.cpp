@@ -5,26 +5,10 @@
 #include "GallowView.h"
 #include "../controller/GallowController.h"
 
-GallowView::GallowView( int wordSize, GallowController* controller ) :
+GallowView::GallowView( GallowController* controller ) :
     _controller( controller )
 {
-    init( wordSize );
-}
-
-void GallowView::init( int wordSize )
-{
-    _wordSize = wordSize;
-    _word = std::string();
-
-    for(int i = 0; i < _wordSize; i++ )
-    {
-        _word.insert( i, "_" );
-    }
     update();
-}
-
-GallowView::~GallowView()
-{
 }
 
 void GallowView::loop()
@@ -33,6 +17,7 @@ void GallowView::loop()
 
     while( std::cin >> letter )
     {
+        std::cout << "oi" << std::endl;
         if( !isupper( letter ) )
         {
             letter = toupper( letter );
@@ -42,11 +27,11 @@ void GallowView::loop()
     }
 }
 
-void GallowView::update( char letter, std::vector< int > indexes )
+void GallowView::update()
 {
     system( "clear" ); 
     drawGallow();
-    drawFooter( letter, indexes );
+    drawFooter();
 }
 
 void GallowView::drawGallow()
@@ -107,7 +92,7 @@ void GallowView::drawGallow()
            std::cout << " |           " << std::endl;  
            std::cout << " |           " << std::endl;  
         break;
-        case 6:
+        default:
            std::cout << "  _________  " << std::endl;   
            std::cout << " |         | " << std::endl;
            std::cout << " |         0 " << std::endl;
@@ -119,19 +104,9 @@ void GallowView::drawGallow()
     }
 }
 
-void GallowView::drawFooter( char newLetter, std::vector< int > indexes )
+void GallowView::drawFooter()
 {
-    if( indexes.empty() )
-    {
-        newLetter = '_';
-    }
-
-    for(int i = 0; i < indexes.size(); i++ )
-    {
-        _word.replace( indexes[ i ], 1, 1, newLetter );
-    }
-
-    auto wordCopy = std::string( _word );
+    auto wordCopy = _controller->getStringBuffer();
     for( int i = 1; i < wordCopy.size(); i += 2 )
     {
         wordCopy.insert( i, " " );
@@ -173,6 +148,7 @@ void GallowView::gameover( bool won )
     }
     else if( letter == 's' || letter == 'S' )
     {   
+        system( "clear" );
         exit( 2 );
     }
 }

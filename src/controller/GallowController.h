@@ -12,7 +12,7 @@ class GallowController
 public:
     GallowController();
     
-    ~GallowController();
+    ~GallowController() = default;
     
     void newGame();
     
@@ -23,6 +23,8 @@ public:
     void incomingLetter( char letter );
 
     std::string getWord();
+
+    std::string getStringBuffer();
 
 private:
     Gallow _gallow;

@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include "wordDB.h"
+#include "WordDB.h"
 
 class Gallow
 {
@@ -13,9 +13,9 @@ public:
 
     Gallow();
     
-    ~Gallow();
+    ~Gallow() = default;
 
-    std::vector< int > hasLetter( char letter );
+    void pushLetter( char letter );
     
     bool didWin();
 
@@ -25,6 +25,8 @@ public:
 
     std::string getWord();
 
+    std::string getStringBuffer();
+
     int wordSize();
 
 private:
@@ -33,6 +35,7 @@ private:
     std::string _word;
     std::vector< char > _typedLetters;
     std::vector< char > _wrongLetters;
+    std::string _buffer;
 };
 
 #endif
