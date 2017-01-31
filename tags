@@ -1,0 +1,63 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ATTEMPTS	src/model/Gallow.cpp	/^#define ATTEMPTS /;"	d	file:
+DirectoryOfThisScript	.ycm_extra_conf.py	/^def DirectoryOfThisScript():$/;"	f
+FlagsForFile	.ycm_extra_conf.py	/^def FlagsForFile( filename, **kwargs ):$/;"	f
+GALLOW_CONTROLLER_H	src/controller/GallowController.h	/^#define GALLOW_CONTROLLER_H$/;"	d
+GALLOW_H	src/model/Gallow.h	/^#define GALLOW_H$/;"	d
+GALLOW_VIEW_H	src/view/GallowView.h	/^#define GALLOW_VIEW_H$/;"	d
+Gallow	src/model/Gallow.cpp	/^Gallow::Gallow() :$/;"	f	class:Gallow
+Gallow	src/model/Gallow.h	/^class Gallow$/;"	c
+GallowController	src/controller/GallowController.cpp	/^GallowController::GallowController() :$/;"	f	class:GallowController
+GallowController	src/controller/GallowController.h	/^class GallowController$/;"	c
+GallowView	src/view/GallowView.cpp	/^GallowView::GallowView( GallowController* controller ) :$/;"	f	class:GallowView
+GallowView	src/view/GallowView.h	/^class GallowView$/;"	c
+GetCompilationInfoForFile	.ycm_extra_conf.py	/^def GetCompilationInfoForFile( filename ):$/;"	f
+IsHeaderFile	.ycm_extra_conf.py	/^def IsHeaderFile( filename ):$/;"	f
+MakeRelativePathsInFlagsAbsolute	.ycm_extra_conf.py	/^def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):$/;"	f
+SOURCE_EXTENSIONS	.ycm_extra_conf.py	/^SOURCE_EXTENSIONS = [ '.C', '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]$/;"	v
+WORDDB_H	src/model/WordDB.h	/^#define WORDDB_H$/;"	d
+WordDB	src/model/WordDB.cpp	/^WordDB::WordDB()$/;"	f	class:WordDB
+WordDB	src/model/WordDB.h	/^class WordDB$/;"	c
+_buffer	src/model/Gallow.h	/^    std::string _buffer;$/;"	m	class:Gallow
+_controller	src/view/GallowView.h	/^    GallowController* _controller;$/;"	m	class:GallowView
+_gallow	src/controller/GallowController.h	/^    Gallow _gallow;$/;"	m	class:GallowController
+_instance	src/model/WordDB.cpp	/^WordDB WordDB::_instance = WordDB();$/;"	m	class:WordDB	file:
+_instance	src/model/WordDB.h	/^    static WordDB _instance;$/;"	m	class:WordDB
+_listOfWords	src/model/WordDB.cpp	/^std::vector< std::string > WordDB::_listOfWords = std::vector< std::string >();$/;"	m	class:WordDB	file:
+_listOfWords	src/model/WordDB.h	/^    static std::vector< std::string > _listOfWords;$/;"	m	class:WordDB
+_numberOfRights	src/model/Gallow.h	/^    int _numberOfRights;$/;"	m	class:Gallow
+_typedLetters	src/model/Gallow.h	/^    std::vector< char > _typedLetters;$/;"	m	class:Gallow
+_view	src/controller/GallowController.h	/^    GallowView _view;$/;"	m	class:GallowController
+_word	src/model/Gallow.h	/^    std::string _word;$/;"	m	class:Gallow
+_wrongLetters	src/model/Gallow.h	/^    std::vector< char > _wrongLetters;$/;"	m	class:Gallow
+compilation_database_folder	.ycm_extra_conf.py	/^compilation_database_folder = ''$/;"	v
+database	.ycm_extra_conf.py	/^  database = None$/;"	v
+database	.ycm_extra_conf.py	/^  database = ycm_core.CompilationDatabase( compilation_database_folder )$/;"	v
+didLose	src/model/Gallow.cpp	/^bool Gallow::didLose()$/;"	f	class:Gallow
+didWin	src/model/Gallow.cpp	/^bool Gallow::didWin()$/;"	f	class:Gallow
+drawFooter	src/view/GallowView.cpp	/^void GallowView::drawFooter()$/;"	f	class:GallowView
+drawGallow	src/view/GallowView.cpp	/^void GallowView::drawGallow()$/;"	f	class:GallowView
+flags	.ycm_extra_conf.py	/^flags = [$/;"	v
+gameover	src/view/GallowView.cpp	/^void GallowView::gameover( bool won )$/;"	f	class:GallowView
+getNumberOfMistakes	src/controller/GallowController.cpp	/^int GallowController::getNumberOfMistakes()$/;"	f	class:GallowController
+getRandomWord	src/model/WordDB.cpp	/^std::string WordDB::getRandomWord()$/;"	f	class:WordDB
+getStringBuffer	src/controller/GallowController.cpp	/^std::string GallowController::getStringBuffer()$/;"	f	class:GallowController
+getStringBuffer	src/model/Gallow.cpp	/^std::string Gallow::getStringBuffer()$/;"	f	class:Gallow
+getWord	src/controller/GallowController.cpp	/^std::string GallowController::getWord()$/;"	f	class:GallowController
+getWord	src/model/Gallow.cpp	/^std::string Gallow::getWord()$/;"	f	class:Gallow
+getWrongLetters	src/controller/GallowController.cpp	/^std::vector< char > GallowController::getWrongLetters()$/;"	f	class:GallowController
+getWrongLetters	src/model/Gallow.cpp	/^std::vector< char > Gallow::getWrongLetters()$/;"	f	class:Gallow
+incomingLetter	src/controller/GallowController.cpp	/^void GallowController::incomingLetter( char letter )$/;"	f	class:GallowController
+loop	src/view/GallowView.cpp	/^void GallowView::loop()$/;"	f	class:GallowView
+main	src/main.cpp	/^int main( void )$/;"	f
+newGame	src/controller/GallowController.cpp	/^void GallowController::newGame()$/;"	f	class:GallowController
+os	.ycm_extra_conf.py	/^import os$/;"	i
+pushLetter	src/model/Gallow.cpp	/^void Gallow::pushLetter( char letter )$/;"	f	class:Gallow
+update	src/view/GallowView.cpp	/^void GallowView::update()$/;"	f	class:GallowView
+wordSize	src/model/Gallow.cpp	/^int Gallow::wordSize()$/;"	f	class:Gallow
+ycm_core	.ycm_extra_conf.py	/^import ycm_core$/;"	i
